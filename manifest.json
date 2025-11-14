@@ -7,7 +7,7 @@
   "host_permissions": ["*://*.youtube.com*", "*://*/*"],
   "content_scripts": [
     {
-      "matches": ["*://*.geeksforgeeks.org/*"],
+      "matches": ["*://*.geeksforgeeks.com/*"],
       "js": ["content.js"],
       "run_at": "document_start",
       "all_frames": true,
@@ -17,7 +17,7 @@
   "web_accessible_resources": [
     {
       "resources": ["injected.js"],
-      "matches": ["*://*.geeksforgeeks.org/*"]
+      "matches": ["*://*.youtube.com/*"]
     }
   ]
 }
