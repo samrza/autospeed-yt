@@ -4,34 +4,96 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
   </head>
   <body>
-    <div class="w-64 p-4 bg-gray-900 text-white space-y-4">
-      <h1>Autospeed Yt</h1>
+    <!-- main -->
+    <div class="w-80 p-4 bg-gray-900 text-white space-y-6 rounded-xl">
+      <h1 class="text-xl font-bold flex items-center justify-center">
+        Autospeed YT
+      </h1>
 
-      <label class="inline-flex items-center cursor-pointer">
-        <input type="checkbox" value="" class="sr-only peer" />
-        <div
-          class="relative w-9 h-5 bg-neutral-quaternary peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-brand-soft dark:peer-focus:ring-brand-soft rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-buffer after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-brand"
-        ></div>
-        <span class="select-none ms-3 text-sm font-medium text-heading"
-          >Toggle me</span
-        >
-      </label>
-    </div>
+      <div class="flex items-center justify-between">
+        <span>Enable Dynamic Speed</span>
 
-    <label
-      for="default-range"
-      class="block mb-2.5 text-sm font-medium text-heading"
-      >Default range</label
-    >
-    <div>
-      <input
-        id="default-range"
-        type="range"
-        value="50"
-        class="w-full h-2 bg-neutral-quaternary rounded-full appearance-none cursor-pointer"
-      />
+        <!-- put your toggle here -->
+        <div class="relative inline-block w-11 h-5">
+          <input
+            checked
+            id="switch-component"
+            type="checkbox"
+            class="peer appearance-none w-11 h-5 bg-slate-100 rounded-full checked:bg-slate-800 cursor-pointer transition-colors duration-300"
+          />
+          <label
+            for="switch-component"
+            class="absolute top-0 left-0 w-5 h-5 bg-white rounded-full border border-slate-300 shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer"
+          >
+          </label>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Silence Speed -->
+        <div>
+          <div class="flex justify-between mb-1">
+            <label for="silence-speed">Silence Speed</label>
+            <span id="silence-value">3.0x</span>
+          </div>
+          <input
+            id="silence-speed"
+            type="range"
+            min="0.5"
+            max="4"
+            step="0.1"
+            value="3"
+            class="w-full cursor-pointer"
+          />
+        </div>
+        <!-- Normal Speed -->
+        <div>
+          <div class="flex justify-between mb-1">
+            <label for="normal-speed">Normal Speed</label>
+            <span id="normal-value">1.5x</span>
+          </div>
+          <input
+            id="normal-speed"
+            type="range"
+            min="0.5"
+            max="3"
+            value="1.5"
+            step="0.1"
+            class="w-full cursor-pointer"
+          />
+        </div>
+
+        <!-- Fast Speed -->
+        <div>
+          <div class="flex justify-between mb-1">
+            <label for="fast-speed">Fast Speed</label>
+            <span id="fast-value">1.0x</span>
+          </div>
+          <input
+            id="fast-speed"
+            type="range"
+            min="0.5"
+            max="2"
+            value="1"
+            step="0.1"
+            class="w-full cursor-pointer"
+          />
+        </div>
+      </div>
+
+      <!--Save  button hai ye -->
+      <button
+        id="save-btn"
+        class="bg-blue-600 hover:bg-blue-700 rounded w-full py-2 text-center font-semibold"
+      >
+        Save 
+      </button>
     </div>
+    <script src="popup.js"></script>
+
   </body>
 </html>
