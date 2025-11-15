@@ -1,7 +1,6 @@
-const silenceSlider = document.getElementById("silence-value");
+const silenceSlider = document.getElementById("silence-speed");
 const normalSlider = document.getElementById("normal-speed");
 const fastSlider = document.getElementById("fast-speed");
-
 
 // Get value display elements
 const silenceValue = document.getElementById("silence-value");
@@ -19,3 +18,5 @@ normalSlider.addEventListener("input", () => {
 fastSlider.addEventListener("input", () => {
   fastValue.textContent = fastSlider.value + "x";
 });
+
+
