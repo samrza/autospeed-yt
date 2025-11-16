@@ -1,23 +1,16 @@
 {
   "manifest_version": 3,
-  "name": "AutoSpeed YT",
+  "name": "Autospeed YT",
   "version": "1.0",
-  "description": "dynamic speed yt   ",
-  "permissions": [],
-  "host_permissions": ["*://*.youtube.com*", "*://*/*"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage"],
+  "host_permissions": ["https://www.youtube.com/*"],
   "content_scripts": [
     {
-      "matches": ["*://*.geeksforgeeks.com/*"],
-      "js": ["content.js"],
-      "run_at": "document_start",
-      "all_frames": true,
-      "match_about_blank": true
-    }
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": ["injected.js"],
-      "matches": ["*://*.youtube.com/*"]
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"]
     }
   ]
 }

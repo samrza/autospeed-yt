@@ -19,4 +19,18 @@ fastSlider.addEventListener("input", () => {
   fastValue.textContent = fastSlider.value + "x";
 });
 
+const saveBtn = document.getElementById("save-btn");
+
+saveBtn.addEventListener("click", () => {
+  const settings = {
+    enabled: document.getElementById("switch-component").checked,
+    silenceSpeed: silenceSlider.value,
+    normalSpeed: normalSlider.value,
+    fastSpeed: fastSlider.value,
+  };
+
+  chrome.storage.local.set({ speedSettings: settings }, () => {
+    console.log("Settings saved", settings);
+  });
+});
 
